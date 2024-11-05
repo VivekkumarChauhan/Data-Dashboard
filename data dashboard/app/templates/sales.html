@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Sales Dashboard{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Sales Dashboard</h1>
+    <p>Analyze sales performance across various regions and products.</p>
+</div>
+
+<!-- Filters for Data Selection -->
+<div class="filter-section">
+    <label for="regionSelect">Select Region:</label>
+    <select id="regionSelect" onchange="updateSalesChart()">
+        <option value="all">All Regions</option>
+        <option value="north">North</option>
+        <option value="south">South</option>
+        <option value="east">East</option>
+        <option value="west">West</option>
+    </select>
+
+    <label for="timePeriodSelect">Select Time Period:</label>
+    <select id="timePeriodSelect" onchange="updateSalesChart()">
+        <option value="monthly">Monthly</option>
+        <option value="quarterly">Quarterly</option>
+        <option value="yearly">Yearly</option>
+    </select>
+</div>
+
+<!-- Sales Chart Section -->
+<div class="chart-container">
+    <canvas id="salesChart" class="animated fadeInUp"></canvas>
+</div>
+
+<!-- Product Performance Table -->
+<div class="product-performance">
+    <h3>Product Performance</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Sales (Units)</th>
+                <th>Revenue ($)</th>
+            </tr>
+        </thead>
+        <tbody id="productTableBody">
+            <!-- Dynamically populated rows via JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/SalesChart.js') }}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize the sales chart
+        initSalesChart();
+
+        // Populate product performance table
+        populateProductTable();
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,33 @@
+advanced_data_dashboard/
+├── app/
+│   ├── static/
+│   │   ├── css/              # CSS files for styling and animations
+│   │   │   ├── base.css      # Basic styles
+│   │   │   └── animations.css # Animation styles
+│   │   └── js/
+│   │       ├── components/   # JavaScript components for charts and elements
+│   │       │   ├── SalesChart.js
+│   │       │   ├── ProfitChart.js
+│   │       │   └── MapVisualization.js
+│   │       └── main.js       # Main JavaScript file for routing and interactivity
+│   ├── templates/
+│   │   ├── base.html         # Base template for layout
+│   │   ├── index.html        # Homepage template
+│   │   ├── sales.html        # Sales page template
+│   │   └── analytics.html    # Advanced analytics template
+│   ├── __init__.py           # App initialization
+│   ├── routes.py             # Routes for each page
+│   ├── models.py             # Database models
+│   ├── services.py           # Functions to fetch and process data
+│   ├── config.py             # Configuration settings
+├── data/
+│   ├── raw/                  # Raw data files
+│   ├── processed/            # Processed data files (e.g., aggregated data)
+├── tests/
+│   ├── test_routes.py        # Tests for routes and API endpoints
+│   ├── test_models.py        # Tests for data models
+│   ├── test_services.py      # Tests for data processing functions
+│   └── test_ui.py            # UI tests (can use Selenium for end-to-end testing)
+├── .env                      # Environment variables (DB credentials, API keys)
+├── requirements.txt          # Python dependencies
+└── run.py                    # Main entry point to start the app

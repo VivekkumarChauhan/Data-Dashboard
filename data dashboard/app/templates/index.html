@@ -1,0 +1,66 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="animate-fade-in">Welcome to the Advanced Data Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="nav-link active">Home</a></li>
+                <li><a href="{{ url_for('sales') }}" class="nav-link">Sales</a></li>
+                <li><a href="{{ url_for('analytics') }}" class="nav-link">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="overview animate-slide-in">
+            <h2>Overview</h2>
+            <p>This dashboard provides insights into sales, user engagement, and other metrics.</p>
+        </section>
+
+        <section class="charts animate-zoom-in">
+            <h3>Quick Data Overview</h3>
+            <div class="chart-container">
+                <canvas id="overviewChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for the overview chart
+        const ctx = document.getElementById('overviewChart').getContext('2d');
+        const overviewChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Monthly Sales Overview'
+                    }
+                }
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

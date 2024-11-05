@@ -1,0 +1,51 @@
+<!-- analytics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Dashboard - Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/animations.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="animate-fade-in">Analytics</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('sales') }}" class="nav-link">Sales</a></li>
+                <li><a href="{{ url_for('analytics') }}" class="nav-link active">Analytics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="analytics-section animate-slide-in">
+            <h2>Sales Analytics</h2>
+            <div class="chart-container">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </section>
+
+        <section class="analytics-section animate-slide-in">
+            <h2>User Engagement</h2>
+            <div class="chart-container">
+                <canvas id="profileChart"></canvas>
+            </div>
+        </section>
+
+        <section class="analytics-section animate-zoom-in">
+            <h2>Location-Based Analysis</h2>
+            <div id="map" class="map-container"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='js/components/SalesChart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/ProfileChart.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/MapVisualization.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
