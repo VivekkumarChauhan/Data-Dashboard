@@ -10,7 +10,8 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from . import routes
+        from . import routes  # Import routes here to avoid circular import
+        routes.init_routes(app)  # Pass the app instance to the routes function
         db.create_all()  # Create tables
 
     return app

@@ -1,22 +1,5 @@
-Flask==2.1.2
-Flask-SQLAlchemy==2.5.1
-Flask-CORS==3.0.10     # For handling cross-origin requests if needed
-pandas==1.4.1          # For data manipulation
-numpy==1.22.3          # For numerical operations
-requests==2.27.1       # To handle any API requests if needed
-plotly==5.6.0          # For additional data visualizations
-gunicorn==20.1.0       # For deploying to production
-
-# Database dependencies (if you're using PostgreSQL, for example)
-psycopg2-binary==2.9.3 # PostgreSQL database adapter
-
-# Testing packages
-pytest==7.1.1          # For testing
-Flask-Testing==0.8.1   # For testing Flask applications
-selenium==4.1.0        # For UI testing with Selenium (if you're writing end-to-end tests)
-
-# Other visualization or data science packages (optional)
-matplotlib==3.5.1      # For plotting, if needed
-scipy==1.8.0           # For scientific computations
-
-# D3 visualization (if using D3.js in the frontend, you may not need Python-specific libraries)
+Flask
+Flask-SQLAlchemy
+Flask-CORS
+pandas
+numpy
