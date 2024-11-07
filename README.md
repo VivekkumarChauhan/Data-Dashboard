@@ -7,6 +7,7 @@
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Docker Deployment](#Docker-Deployment)
 - [License](#license)
 - [Contributing](#contributing)
 
